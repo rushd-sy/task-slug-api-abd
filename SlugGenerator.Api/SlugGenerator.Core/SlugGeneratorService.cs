@@ -1,4 +1,5 @@
-﻿namespace SlugGenerator.Core
+﻿using ClassLibrary_Slug_Generator_Abd;
+namespace SlugGenerator.Core
 {
     public class SlugGeneratorService : ISlugGeneratorService
     {
@@ -6,22 +7,14 @@
         {
             ArgumentNullException.ThrowIfNull(text);
 
-            return string.Join(separator, text
-            .Where(ch => char.IsLetter(ch) || ch == ' ' || ch == separator)
-            .ToArray()
-            .AsMemory()
-            .ToString()
-            .ToLowerInvariant()
-            .Split(new[] { ' ', separator }, StringSplitOptions.RemoveEmptyEntries)
-);
+            return ClassLibrary_Slug_Generator_Abd.SlugGenerator.Generate(text, separator);
         }
 
         public string GenerateUnique(string text)
         {
             ArgumentNullException.ThrowIfNull(text);
 
-            System.Guid uniqueId = System.Guid.NewGuid();
-            return $"{Generate(text)}-{uniqueId}";
+            return ClassLibrary_Slug_Generator_Abd.SlugGenerator.GenerateUnique(text);
         }
     }
 }

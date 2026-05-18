@@ -26,7 +26,7 @@ namespace SlugGenerator.Api.Controllers;
         var response = new GenerateSlugResponse(
             OriginalText: request.Text,
             Slug: slug,
-            GeneratedAt: DateTime.Now
+            GeneratedAt: DateTime.UtcNow
         );
 
             return Ok(response);
