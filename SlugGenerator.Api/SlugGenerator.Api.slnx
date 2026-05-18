@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SlugGenerator.Api/SlugGenerator.Api.csproj" />
+  <Project Path="SlugGenerator.Core/SlugGenerator.Core.csproj" Id="5ee0b919-638a-445c-b60b-9ae64b6ab955" />
+</Solution>
