@@ -9,6 +9,10 @@ builder.Services.AddScoped<SlugGenerator.Core.ISlugGeneratorService, SlugGenerat
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddProblemDetails();
+
+builder.Services.AddExceptionHandler<SlugGenerator.Api.Infrastructure.GlobalExceptionHandler>();
+
 builder.Services.AddApiVersioning(options => {
     options.DefaultApiVersion = new Asp.Versioning.ApiVersion(1, 0);
     options.AssumeDefaultVersionWhenUnspecified = true;
@@ -19,6 +23,9 @@ builder.Services.AddApiVersioning(options => {
 });
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

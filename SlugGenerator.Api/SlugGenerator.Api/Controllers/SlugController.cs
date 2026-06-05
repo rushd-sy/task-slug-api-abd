@@ -4,7 +4,6 @@ using SlugGenerator.Core;
 using Asp.Versioning;
 
 
-
 namespace SlugGenerator.Api.Controllers;
     [ApiController] 
     [ApiVersion("1.0")] 
