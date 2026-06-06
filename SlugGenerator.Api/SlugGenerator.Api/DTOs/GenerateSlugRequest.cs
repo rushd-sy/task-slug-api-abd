@@ -2,5 +2,5 @@
 
 namespace SlugGenerator.Api.DTOs
 {
-    public record GenerateSlugRequest(string Text, char Separator = '-');
+    public record GenerateSlugRequest(string Text, char? Separator = '-');
 }

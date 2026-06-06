@@ -12,7 +12,7 @@ builder.Services.AddScoped<SlugGenerator.Core.ISlugGeneratorService, SlugGenerat
 
 
 // Add FluentValidation services
-builder.Services.AddFluentValidationAutoValidation();
+//builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<SlugGenerator.Api.Validators.SlugRequestValidator>();
 
 

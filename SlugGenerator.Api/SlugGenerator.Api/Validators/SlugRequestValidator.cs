@@ -15,7 +15,8 @@ namespace SlugGenerator.Api.Validators
 
             RuleFor(request => request.Separator)
             .Must(separator => separator == '-' || separator == '_')
-            .WithMessage("Separator must be either '-' or '_'.");
+            .WithMessage("Separator must be either '-' or '_'.")
+            .When(request => request.Separator != null);
         }
 
     }
